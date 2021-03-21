@@ -39,3 +39,11 @@ const heightJohn = 1.95;
 
  */
 
+// example string template literals
+const name = 'ezzat';
+const job = 'SW';
+const birthYear = 1992;
+const currentYear = 2021;
+
+const ezzatData = `here's ${name}, a ${currentYear - birthYear} years old ${job}`
+console.log(ezzatData);

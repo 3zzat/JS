@@ -1,6 +1,8 @@
+'use strict';
 // #### first challenge ######
+//claculate who's Body musclar is better
  function calculateBMI (mass, height){
-    return BMI = mass/(height*height);
+    return mass/(height*height);
 }
 
 const massMark = 78;
@@ -27,6 +29,7 @@ else
 
 
 //code challange #3
+// which team got more score
 
 const minimumScore = 100;
 
@@ -59,3 +62,97 @@ function scoreResult(team1Average, team2Average){
 console.log(calculateAverage(dolphinsScore1, dolphinsScore2, dolphinsScore3), calculateAverage(koalasScore1,koalasScore2, koalasScore3));
 console.log(scoreResult(dolphinsAverageScore, koalasAverageScore));
 
+console.log(true && false && !false);
+
+
+//coding challange #4
+//claculate tip for steven
+const bill = 50;
+
+let tip = calculatTipValue(bill);
+
+function calculatTipValue(bill){
+    if (bill >= 50 && bill <= 300){
+        return bill * (15/100);
+    }else{
+        return bill * (20/100)
+    }
+}
+
+console.log(`Steven, you should pay ${tip} as a tip`);
+
+// tip claculator with arrays challange
+var bills = [125,555,44];
+var tips = [calculatTipValue(bills[0]), calculatTipValue(bills[1]),calculatTipValue(bills[2])];
+var tipss = calcTipsArr(bills);
+
+function calcTipsArr(arrOfBills){
+    // console.log("ssss");
+    var i;
+    var arrofTips = [];
+    for(i = 0; i < arrOfBills.length; i++){
+        console.log(arrOfBills[i]);
+        arrofTips.push(calculatTipValue(arrOfBills[i]));
+        // console.log(arrofTips + 'insid fun');
+    }
+
+    return arrofTips;
+}
+console.log(tips);
+console.log(tipss);
+
+// object coding challange #1
+const jonas = {
+    firstName : 'Jonas',
+    lastName : 'SCH',
+    birthYear : 1991,
+    job : 'teacher',
+    hasDriverLicense : false,
+    calcAge: function(){
+        this.age = 2020 - this.birthYear;
+        return this.age;
+    },
+
+    getSummary: function(){
+        this.summary = `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriverLicense ? 'a' : 'no'} driver's license`;
+        return this.summary;
+    }
+
+}
+
+// let ObjchallangeOutput = `${jonas.firstName} is a ${jonas.age}-year old ${jonas.job}, and he has ${jonas.hasDriverLicense ? 'a' : 'no'} driver's license`;
+
+console.log(jonas.getSummary());
+
+
+//object coding challange #2 
+//who's BMI better
+const mark = {
+    firstName : 'Mark',
+    lastName : 'Miller',
+    mass :78,
+    height :1.69,
+    calculateBMI : function(){
+        return this.BMI = this.mass / this.height ** 2
+    }
+};
+
+const john = {
+    firstName : 'John',
+    lastName : 'Smith',
+    mass :92,
+    height :1.95,
+    calculateBMI : function(){
+        return this.BMI = this.mass / this.height ** 2
+    }
+}
+
+function getBestBMI (johnBMI, markBMI){
+    if (johnBMI > markBMI){
+        return `John's BMI ${johnBMI} is higher than Mark's ${markBMI}!`;
+    }else{
+        return `Mark's BMI ${markBMI} is higher than John's ${johnBMI}!`;
+    }
+}
+
+console.log(getBestBMI(john.calculateBMI(),mark.calculateBMI()));
